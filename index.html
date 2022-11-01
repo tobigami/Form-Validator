@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form-1</title>
+    <!-- link css -->
+    <link rel="stylesheet" href="style.css" />
+    <!-- link font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+    <!-- link font awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+      integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <div class="main">
+      <form action="" method="POST" class="form" id="register-form">
+        <h3 class="heading">Registration-Form</h3>
+
+        <div class="spacer"></div>
+
+        <!-- Name -->
+        <div class="form-group">
+          <label for="fullname" class="form-label">
+            <i class="fa-solid fa-user icon"></i>Name</label
+          >
+          <input
+            id="fullname"
+            name="fullname"
+            rules="required"
+            type="text"
+            placeholder="Your Name"
+            class="form-control"
+          />
+          <span class="form-message"></span>
+        </div>
+        <!-- email -->
+        <div class="form-group">
+          <label for="email" class="form-label">
+            <i class="fa-solid fa-envelope icon"></i>
+            Email</label
+          >
+          <input
+            id="email"
+            name="email"
+            rules="required|email"
+            type="text"
+            placeholder="email@domain.com"
+            class="form-control"
+          />
+          <span class="form-message"></span>
+        </div>
+
+        <!-- password -->
+        <div class="form-group">
+          <label for="password" class="form-label">
+            <i class="fa-solid fa-lock icon"></i>
+            Password</label
+          >
+          <input
+            id="password"
+            name="password"
+            rules="required|min:6"
+            type="text"
+            placeholder="Enter your password"
+            class="form-control"
+          />
+          <span class="form-message"></span>
+        </div>
+
+        <!-- password-confirm -->
+        <div class="form-group">
+          <label for="password_confirmation" class="form-label">
+            <i class="fa-solid fa-lock icon"></i>
+            Password Confirm</label
+          >
+          <input
+            id="password_confirmation"
+            name="password_confirmation"
+            rules="required|confirm"
+            placeholder="Confirm password"
+            type="text"
+            class="form-control"
+          />
+          <span class="form-message"></span>
+        </div>
+
+        <button class="form-submit">Submit</button>
+      </form>
+    </div>
+    <script src="./main.js"></script>
+    <script>
+      var form = new validator("#register-form");
+      form.onSubmit = function (data) {
+        console.log(data);
+      };
+    </script>
+  </body>
+</html>
